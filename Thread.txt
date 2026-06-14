@@ -1,0 +1,55 @@
+A. What is thread ?
+A thread is a fundamental unit of execution within a process. It represents a sequence of instructions that the CPU can execute independently. Threads enable multitasking within a single process, allowing multiple tasks to run concurrently, which improves performance and responsiveness.
+
+
+B. Key Characteristics of Threads:
+Threads share the same memory space and resources (e.g., heap, global variables) of their parent process but maintain their own stack, program counter, and registers. This shared memory model makes communication between threads efficient but also introduces challenges like race conditions and synchronization issues.
+
+
+
+A thread in computer science is short for a thread of execution. Threads are a way for a program to divide (termed "split") itself into two or more simultaneously (or pseudo-simultaneously) running tasks. Threads and processes differ from one operating system to another but, in general, a thread is contained inside a process and different threads in the same process share same resources while different processes in the same multitasking operating system do not."
+
+
+C. How Threads Work
+
+When a process starts, it typically has one thread (the main thread). Additional threads can be created to perform specific tasks concurrently. For example, in a web browser, one thread might handle user interactions while another loads web content in the background.
+
+Threads are managed by the operating system or a threading library. The OS scheduler allocates CPU time to threads, enabling them to execute in parallel on multi-core processors or pseudo-parallel on single-core systems.
+
+
+D. Advantages and Challenges
+
+Threads allow efficient multitasking and parallelism, especially on multi-core CPUs. However, they introduce complexities like synchronization, deadlocks, and debugging challenges. Proper thread management and synchronization mechanisms (e.g., mutexes, semaphores) are crucial for safe and efficient multithreading.
+
+
+
+
+E. Example Use Case
+
+Consider a ticket-selling application where multiple threads handle ticket sales. Each thread decrements the number of remaining tickets. Without proper synchronization, multiple threads might access and modify the ticket count simultaneously, leading to errors like overselling.
+
+#include <iostream>
+#include <thread>
+#include <mutex>
+
+std::mutex ticket_mutex;
+int remaining_tickets = 100;
+
+void sell_tickets(int id) {
+while (true) {
+std::lock_guard<std::mutex> lock(ticket_mutex);
+if (remaining_tickets <= 0) break;
+std::cout << "Thread " << id << " sold ticket " << remaining_tickets-- << "\n";
+}
+}
+
+int main() {
+std::thread agents[5];
+for (int i = 0; i < 5; ++i) {
+agents[i] = std::thread(sell_tickets, i);
+}
+for (auto& agent : agents) {
+agent.join();
+}
+return 0;
+}
