@@ -1,0 +1,44 @@
+Execution Context in JavaScript
+
+The execution context in JavaScript is an abstract environment where code is evaluated and executed. It contains all the information necessary for the JavaScript engine to execute the code, such as variables, functions, and the value of this. There are two primary types of execution contexts:
+
+Global Execution Context (GEC): This is created when the script starts running. It handles code that is not inside any function and sets up the global scope, including variables and functions declared at the top level.
+
+Function Execution Context (FEC): This is created whenever a function is invoked. Each function call generates its own execution context, which is nested within the global or another function's context.
+
+Phases of Execution Context Creation
+
+The creation of an execution context occurs in two phases:
+
+Creation Phase: The JavaScript engine allocates memory for variables and functions. Variables declared with var are initialized to undefined, while function declarations are stored in memory. The scope chain is established, linking the current context to its parent contexts for variable resolution. The value of this is determined based on the context (e.g., window in the global context or the object invoking a method).
+
+Execution Phase: The code is executed line by line. Variables are assigned their actual values, and functions are executed as needed.
+
+Call Stack and Execution Context
+
+JavaScript uses a call stack to manage execution contexts. The global execution context is pushed onto the stack first. When a function is called, its execution context is created and pushed onto the stack. Once the function completes, its context is popped off the stack, and control returns to the previous context.
+
+For example:
+
+function first() {
+console.log("First function");
+second();
+}
+
+function second() {
+console.log("Second function");
+}
+
+first();
+Copy
+Here, the global context is created first, followed by the first function's context, and then the second function's context. The stack unwinds as each function completes.
+
+Key Concepts
+
+Hoisting: Variables declared with var and function declarations are hoisted to the top of their scope during the creation phase. However, variables declared with let and const are hoisted but remain uninitialized.
+
+Scope Chain: Determines the accessibility of variables. Functions can access variables in their own scope and parent scopes, but not vice versa.
+
+this Keyword: Refers to the object that owns the execution context. In the global context, this refers to the window object in browsers.
+
+Understanding execution contexts is fundamental to mastering JavaScript, as it underpins concepts like closures, hoisting, and the behavior of this.
