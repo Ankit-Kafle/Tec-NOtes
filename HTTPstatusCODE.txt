@@ -1,0 +1,74 @@
+developer-friendly HTTP status code table grouped by category, useful for REST API development.
+
+
+1xx – Informational
+Code	               Meaning	                                              Usage
+100 Continue	   Initial request OK, continue sending body	         Large uploads
+101 Switching      Protocols	Server switching protocols               WebSocket upgrade
+102 Processing	   Request accepted, still processing	                 WebDAV, async ops
+
+
+2xx – Success
+
+Code	                                      Meaning	                                                    Usage                           
+200                OK	Request succeeded	                                                                 GET, PUT, DELETE
+201               Created	Resource created	                                                             POST new resource
+202               Accepted	Request accepted, processing later	                                             Async jobs
+203               Non-Authoritative Information	Returned data from a third-party source	                      Proxies
+204               No Content	Success, no body returned	                                                 DELETE, PUT without response
+205               Reset Content	Client should reset form/view	                                             Form submissions
+206               Partial Content	Partial data returned	                                                 Range requests (downloads)
+
+
+
+3xx – Redirection
+
+Code                    	Meaning	                                                          Usage
+300                       Multiple Choices	Multiple possible responses	                  Rarely used
+301                       Moved Permanently	Resource moved, update URL	                  SEO redirects
+302                       Found	Temporary redirect	                                      Login redirects
+303                       See Other	Redirect to GET another resource	                  After POST
+304                       Not Modified	Cached version still valid	                      Conditional GET
+307                       Temporary Redirect	Temporary, method preserved	              API versioning
+308                       Permanent Redirect	Permanent, method preserved	              API migration
+
+
+
+
+4xx – Client Errors
+Code	                      Meaning	                                                               Usage
+400                    Bad Request	Invalid request syntax/data	                                       Validation errors
+401                    Unauthorized	Authentication required	                                        Missing/invalid token
+403                    Forbidden	Authenticated but no permission	                                   Access control
+404                    Not Found	Resource not found	                                                Wrong endpoint/ID
+405                    Method Not Allowed	HTTP method not supported	                                POST on read-only
+406                   Not Acceptable	Cannot return requested format	                                Content negotiation
+408                   Request Timeout	Client took too long	                                        Slow connections
+409                   Conflict	Resource conflict	                                                      Duplicate entries
+410                   Gone	Resource permanently removed	                                              Deprecated APIs
+415                   Unsupported Media Type	Wrong content type	                                      JSON expected but XML sent
+422                   Unprocessable Entity	Validation failed	                                           Semantic errors
+429                    Too Many Requests	Rate limit exceeded	                                             API throttling
+
+
+
+
+
+
+| Code                               | Meaning                                | Usage                |
+| ---------------------------------- | -------------------------------------- | -------------------- |
+| **500 Internal Server Error**      | Generic server failure                 | Unhandled exceptions |
+| **501 Not Implemented**            | Feature not supported                  | Unavailable method   |
+| **502 Bad Gateway**                | Invalid response from upstream         | Proxy errors         |
+| **503 Service Unavailable**        | Server overloaded or under maintenance | Downtime             |
+| **504 Gateway Timeout**            | Upstream server timeout                | Slow backend         |
+| **505 HTTP Version Not Supported** | Unsupported HTTP version               | Rare                 |
+| **507 Insufficient Storage**       | Server out of storage space            | WebDAV, uploads      |
+
+
+
+
+💡 Tip for API design:
+
+Use 2xx for success, 4xx for client mistakes, 5xx for server issues.
+Always return a clear JSON error message with code and message fields for 4xx/5xx responses.
