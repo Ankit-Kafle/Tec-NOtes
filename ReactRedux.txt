@@ -1,0 +1,78 @@
+1. State
+
+State is simply the data.
+
+Example:
+
+{
+   count: 0
+}
+The store keeps this state.
+
+2. Store
+Store is the big container.
+
+Store
+ └── State
+      └── count = 0
+
+Only one store usually exists in the application.
+
+3. Action
+Action tells Redux:
+"Something happened."
+
+Example:
+increment()
+decrement()
+reset()
+
+Action does not change state.
+It only sends a message.
+
+4. Reducer
+
+Reducer is a function that updates the state.
+increment: (state) => {
+    state.count += 1
+}
+
+Reducer receives:
+current state
+action
+
+and changes the state.
+
+5. Slice
+Slice groups:
+state
+reducers
+actions
+
+Example:
+const counterSlice = createSlice({
+    name: "counter",
+
+    initialState: {
+        count: 0
+    },
+
+    reducers: {
+        increment: (state) => {
+            state.count += 1
+        }
+    }
+})
+
+
+
+Simple Analogy
+
+Imagine a bank.
+
+Store → Bank
+State → Your money
+Action → Deposit request
+Dispatch → Submiting the request
+Reducer → Bank employee processing it
+UI → Updated bank balance shown on screen
