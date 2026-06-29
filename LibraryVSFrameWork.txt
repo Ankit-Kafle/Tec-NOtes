@@ -1,0 +1,80 @@
+A library and a framework are both collections of pre-written code that help developers build applications faster, but they differ in who controls the flow of the program.
+
+Library
+
+A library is a collection of functions, classes, or modules that you call whenever you need them.
+
+You control the application.
+You decide when and where to use the library's code.
+The library simply helps you perform specific tasks.
+Example
+
+In JavaScript:
+
+import _ from "lodash";
+
+const numbers = [1, 2, 3, 4];
+const reversed = _.reverse(numbers);
+
+console.log(reversed);
+
+Here, your program is running, and you call the Lodash function when you need it.
+
+Some popular libraries:
+
+React
+jQuery
+Lodash
+Framework
+
+A framework provides a complete structure for building applications. It controls the flow of the application and calls your code when necessary.
+
+The framework controls the application.
+You write code according to the framework's rules.
+The framework decides when your code runs.
+
+Some popular frameworks:
+
+Angular
+Django
+Spring Boot
+The Main Difference: Inversion of Control
+Library:
+Your Code  ───► Library
+
+You call the library.
+
+Framework:
+Framework ───► Your Code
+
+The framework calls your code.
+
+This concept is often called Inversion of Control.
+
+Real-Life Example
+
+Imagine you want to travel somewhere.
+
+Library = Taxi
+
+You hire a taxi whenever you need it.
+
+You decide where to go.
+You decide when to stop.
+The taxi simply helps you reach your destination.
+Framework = Bus Service
+
+The bus follows a fixed route and schedule.
+
+You must follow its rules.
+The bus decides when it arrives and departs.
+You fit your journey into the system.
+
+
+| Feature     | Library                  | Framework                      |
+| ----------- | ------------------------ | ------------------------------ |
+| Control     | Developer controls flow  | Framework controls flow        |
+| Usage       | You call it              | It calls your code             |
+| Flexibility | More flexible            | More structured                |
+| Purpose     | Solves specific problems | Provides application structure |
+| Example     | React, Lodash, jQuery    | Angular, Django, Spring Boot   |
