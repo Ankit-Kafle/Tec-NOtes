@@ -1,0 +1,68 @@
+What is Node.js?
+
+Node.js is a JavaScript runtime environment that allows you to run JavaScript outside the browser.
+
+Before Node.js:
+
+JavaScript could only run inside browsers like Chrome or Firefox.
+It was mainly used to make web pages interactive.
+
+After Node.js:
+
+JavaScript can run on your computer or server.
+You can build APIs, servers, databases, authentication systems, and entire backend applications using JavaScript.
+Simple Example
+JavaScript inside the browser:
+alert("Hello");
+document.getElementById("title");
+
+These work because the browser provides alert and document.
+
+JavaScript in Node.js:
+console.log("Hello from Node.js");
+
+You run it using:
+
+node app.js
+
+Why was Node.js created?
+
+Web developers previously needed:
+
+HTML/CSS/JavaScript for frontend.
+PHP, Java, Python, or C# for backend.
+
+Node.js made it possible to use JavaScript everywhere:
+
+Frontend → React
+Backend → Node.js
+
+This means you only need one language.
+
+What can you build with Node.js?
+
+You can create:
+
+✅ REST APIs
+✅ Authentication systems
+✅ Chat applications
+✅ Real-time applications
+✅ Blogs and social media apps
+✅ E-commerce websites
+✅ Backend for React applications
+
+For example:
+
+React shows products.
+Node.js sends product data.
+Database stores products.
+
+HOW REACT AND NODE JS WORK TOGETHER
+
+React (Frontend)
+       ↓
+API Request
+       ↓
+Node.js + Express (Backend)
+       ↓
+Database (MongoDB/MySQL)
