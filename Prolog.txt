@@ -1,0 +1,68 @@
+Prolog is a logic programming language in which programs are written using facts and rules, and answers are obtained by asking queries.
+
+How Prolog Works
+
+Prolog works with three things:
+
+Facts – Information that is true.
+Rules – Logical relationships.
+Queries – Questions asked to the program.
+Example
+
+Fact:
+
+likes(ankit, pizza).
+likes(rahul, burger).
+
+This means:
+
+Ankit likes pizza.
+Rahul likes burger.
+
+Query:
+
+?- likes(ankit, pizza).
+
+Output:
+
+Yes.
+Example with Rules
+parent(ram, shyam).
+parent(shyam, hari).
+
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+
+Query:
+
+?- grandparent(ram, hari).
+
+Output:
+
+Yes.
+
+Because:
+
+Ram is Shyam's parent.
+Shyam is Hari's parent.
+Therefore, Ram is Hari's grandparent.
+
+
+Features of Prolog
+Logic-based programming language.
+Uses facts, rules, and queries.
+No need to write the exact steps to solve a problem.
+Commonly used in Artificial Intelligence (AI) and Expert Systems.
+
+
+
+Applications of Prolog
+Artificial Intelligence (AI)
+Expert systems
+Natural language processing
+Theorem proving
+Knowledge-based systems
+
+
+Easy way to remember
+C/C++: Tell the computer how to solve the problem.
+Prolog: Tell the computer what is true (facts and rules), and it figures out how to answer the query.
