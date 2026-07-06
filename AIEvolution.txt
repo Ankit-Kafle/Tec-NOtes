@@ -1,0 +1,145 @@
+
+1.) AI
+AI is the broad field of making computers perform tasks that normally require human intelligence.
+
+Examples:
+
+Understanding language
+Recognizing images
+Playing chess
+Driving cars
+Making decisions
+
+Think of AI as the big umbrella.
+AI
+├── Machine Learning
+├── Deep Learning
+├── Generative AI
+├── Agentic AI
+└── AI Agents
+
+
+2.) Generative AI (GenAI)
+
+Generative AI is a type of AI that creates new content instead of just analyzing existing data.
+
+-> They are Reactive
+-> Low Autonomy
+-> Needs access to Tools
+-> can't execute actions
+
+It can generate:
+
+Text
+Images
+Videos
+Music
+Code
+
+Examples:
+
+OpenAI's ChatGPT → generates text
+Google Gemini → generates text and images
+Anthropic Claude → generates text
+OpenAI DALL·E → generates images
+
+
+3.) AI Agents
+
+An AI Agent is a software system that uses AI (often including Generative AI) to perform tasks autonomously.
+
+
+It doesn't just answer—it acts.
+
+-> Higher Levels of Autonomy
+-> Ability to perform actions
+-> Access to tools(internal and external)
+-> Pro-active
+
+An AI agent can:
+
+Observe
+Think
+Decide
+Take actions
+Learn from results
+
+Many AI agents are built using Agentic AI principles.
+
+Example
+
+Suppose you say:
+
+"Book the cheapest flight to Delhi."
+
+An AI agent may:
+
+Search airline websites
+Compare prices
+Ask for your approval
+Book the ticket
+Send confirmation
+
+
+
+
+4.) Agentic AI
+
+Agentic AI is AI that can plan, reason, make decisions, and perform multiple steps to achieve a goal, often with limited human guidance. These are systems architecture. They are Goal-Focused. For building Agentic Ai there are lot of popular agentic Ai framework eg: Microsoft Autogen, CrewAi, Agno, LangGraph etc
+
+
+Instead of only answering a question, it figures out:
+
+What should I do first?
+What information do I need?
+Which tools should I use?
+What is the next step?
+
+Example
+
+You say:
+
+"Plan my vacation to Japan."
+
+An Agentic AI may:
+
+Find flights.
+Compare prices.
+Suggest hotels.
+Make an itinerary.
+Estimate the budget.
+
+It acts more like an assistant working toward a goal.
+
+Key point
+
+Agentic AI thinks through a task and plans actions.
+
+
+
+
+Important Note about KNOWLEDGE CUTOFF
+A knowledge cutoff date is the latest point in time up to which an AI model was trained on information.
+
+After that date, the model does not automatically know about new events, discoveries, or changes unless it uses external tools (like web search).
+
+Example
+
+Suppose a model has a knowledge cutoff of June 2024.
+
+It knows about:
+
+Events before June 2024 ✅
+Technologies released before June 2024 ✅
+
+It does not automatically know about:
+
+A new AI model released in July 2024 ❌
+Election results in 2025 ❌
+New software updates in 2026 ❌
+
+To answer questions about those, it would need to search the web.
+
+
+
+
