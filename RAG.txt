@@ -1,0 +1,120 @@
+What is RAG?
+RAG (Retrieval-Augmented Generation) is a technique in which an AI model retrieves relevant information from external knowledge sources and uses it to generate more accurate and up-to-date responses.
+
+
+Why do we need RAG?
+
+An LLM has limitations:
+
+Its knowledge may be outdated.
+It doesn't know your private documents.
+It can sometimes hallucinate (make up incorrect information).
+
+RAG solves these problems by allowing the model to search external knowledge.
+
+
+
+HOW RAG work
+
+User Question
+       │
+       ▼
+Retrieve relevant documents
+(from PDFs, databases, websites, etc.)
+       │
+       ▼
+Select the most relevant information
+       │
+       ▼
+Send the question + retrieved information
+to the LLM
+       │
+       ▼
+LLM generates the final answer
+
+
+
+
+Example
+
+Suppose you ask:
+
+"What is the leave policy in my company?"
+
+Without RAG:
+
+The AI doesn't know your company's policy.
+It may guess or say it doesn't know.
+
+With RAG:
+
+Searches your company's HR documents.
+Finds the leave policy.
+Sends that information to the LLM.
+The LLM answers based on the document.
+
+So the answer is accurate and specific to your company.
+
+
+
+
+
+Where does RAG retrieve information from?
+
+It can retrieve information from:
+
+PDFs
+Word documents
+Databases
+Company documents
+Websites
+Knowledge bases
+Emails
+Cloud storage
+
+
+Main Components of RAG
+Knowledge Source
+Stores the information (documents, PDFs, database).
+Retriever
+Finds the most relevant information for the user's question.
+LLM (Generator)
+Reads the retrieved information and generates the final answer.
+
+
+
+Real-world Example
+
+Imagine a student asks:
+
+"What is Banker's Algorithm?"
+
+A normal LLM answers from its training.
+
+A RAG system could first search your Operating Systems textbook or class notes, retrieve the relevant section, and then explain the algorithm using your own study material.
+
+
+
+
+Advantages of RAG
+✅ More accurate answers
+✅ Uses up-to-date information
+✅ Can answer questions about private documents
+✅ Reduces hallucinations
+✅ No need to retrain the LLM whenever documents change
+
+
+Disadvantages
+Slightly slower because it performs retrieval first.
+If the retriever finds poor or irrelevant documents, the answer quality decreases.
+Requires maintaining a knowledge base.
+
+
+
+
+| RAG                          | Fine-tuning                               |
+| ---------------------------- | ----------------------------------------- |
+| Retrieves external knowledge | Changes the model itself                  |
+| Uses latest documents        | Requires retraining                       |
+| Easy to update               | Expensive and time-consuming to update    |
+| Best for company knowledge   | Best for changing model behavior or style |
