@@ -1,0 +1,163 @@
+Docker is a platform that lets you package an application together with everything it needs to run (code, libraries, runtime, dependencies, and configuration) into a container.
+
+Think of it like this:
+
+Without Docker:
+"It works on my computer, but not on yours."
+Different operating systems or library versions can cause problems.
+With Docker:
+The application runs the same way on every computer because everything it needs is inside the container.
+
+
+Why was Docker created?
+Before Docker, developers often faced problems like:
+
+Different operating systems
+Different software versions
+Missing dependencies
+Difficult deployment
+
+Example:
+
+You build a Node.js app using Node.js 22.
+
+On your computer:
+
+Node.js 22
+MongoDB installed
+Correct npm packages
+
+Your friend has:
+
+Node.js 18
+Different MongoDB version
+
+The app may fail.
+
+Docker solves this by packaging everything together.
+
+
+A container is a lightweight, isolated environment where your application runs.
+
+It contains:
+
+Your application
+Required libraries
+Runtime (Node.js, Python, Java, etc.)
+Environment variables
+Configuration
+
+Containers share the host operating system kernel, so they are much lighter than virtual machines.
+
+
+
+
+
+Docker Components
+1. Docker Engine
+The software that creates and manages containers.
+
+It includes:
+Docker Daemon
+Docker CLI
+REST API
+
+2. Docker Image
+
+An image is a blueprint or template for creating containers.
+
+It is read-only.
+
+Example:
+Node.js image
+↓
+Create
+
+↓
+Many containers
+
+One image can create many containers.
+
+3. Docker Container
+A running instance of an image.
+
+
+4. Dockerfile
+A text file containing instructions for building an image.
+
+
+5. Docker Hub
+
+Docker Hub is an online repository where Docker images are stored and shared.
+
+Examples of official images:
+
+Node.js
+MongoDB
+MySQL
+PostgreSQL
+Redis
+Nginx
+Ubuntu
+
+
+
+Docker Architecture
+Developer
+
+↓
+
+Docker CLI
+
+↓
+
+Docker Daemon
+
+↓
+
+Docker Image
+
+↓
+
+Docker Container
+
+
+Docker Workflow
+
+Write application
+
+↓
+
+Create Dockerfile
+
+↓
+
+Build Image
+
+↓
+
+Run Container
+
+↓
+
+Application runs
+
+
+
+
+
+| Image                      | Container                |
+| -------------------------- | ------------------------ |
+| Blueprint                  | Running application      |
+| Read-only                  | Read-write while running |
+| Can create many containers | Runs from an image       |
+
+
+
+| Docker                   | Virtual Machine              |
+| ------------------------ | ---------------------------- |
+| Shares host OS kernel    | Has its own OS               |
+| Starts in seconds        | Takes longer to boot         |
+| Lightweight              | Heavier                      |
+| Uses less RAM            | Uses more RAM                |
+| Better for microservices | Better for full OS isolation |
